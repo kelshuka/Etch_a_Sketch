@@ -17,15 +17,14 @@ function gridStructure(num =16) {
         }
         container.appendChild(content);
     }
-    
-    //container.style.width = '750px';
-    //container.style.height = '100%' ;
 
     const contents = document.querySelectorAll('.contents');
 
     contents.forEach(contents => {
         contents.addEventListener('mouseover', function(){
-            contents.style.backgroundColor = 'purple';
+            //contents.style.backgroundColor = 'purple';
+            let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            contents.style.backgroundColor = "#" + randomColor;
         })
     })
 
@@ -64,15 +63,15 @@ butn.addEventListener('click', function(){
 })
 
 
+const butnCleaar = document.querySelector('#clean');
+
+butnCleaar.addEventListener('click', function(){
+    clearGrid(); 
+    gridStructure();
+    
+})
+
 gridStructure();
-
-
-
-//contents.forEach(contents => {
-//    contents.addEventListener('click', function(){
-//        contents.style.backgroundColor = 'purple';
-//    })
-//})
 
 
 
